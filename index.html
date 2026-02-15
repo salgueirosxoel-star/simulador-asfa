@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulador ASFA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { 
+            font-family: Arial; 
+            text-align: center; 
+            background: #111; 
+            color: white; 
+        }
+        button { 
+            padding: 12px; 
+            margin: 10px; 
+            font-size: 18px; 
+            border-radius: 8px;
+        }
+        .signal { 
+            font-size: 60px; 
+            margin: 30px; 
+        }
+    </style>
+</head>
+<body>
+
+<h1>Simulador ASFA Básico</h1>
+
+<div class="signal" id="signal">🟢</div>
+
+<p>¿Qué debes hacer?</p>
+
+<button onclick="answer('continuar')">Continuar</button>
+<button onclick="answer('frenar')">Frenar</button>
+<button onclick="answer('parar')">Parar</button>
+
+<p id="result"></p>
+
+<script>
+let currentSignal = "verde";
+
+function answer(action) {
+    let result = document.getElementById("result");
+    
+    if(currentSignal === "verde" && action === "continuar") {
+        result.innerHTML = "✅ Correcto. Vía libre.";
+    } else {
+        result.innerHTML = "❌ Incorrecto. Era vía libre.";
+    }
+}
+</script>
+
+</body>
+
+</html>
